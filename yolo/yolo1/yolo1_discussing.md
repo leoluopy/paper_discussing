@@ -16,7 +16,7 @@ look for [papers for yolo1](https://github.com/leoluopy/paper_discussing/blob/ma
 
 预测置信度计算公式：
 
-![](https://github.com/leoluopy/paper_discussing/blob/master/yolo/yolo1/fromula_pre.png)
+![](./fromula_pre.png)
 
 对应类概率 × 有无对象概率 × 预测box和真实box比值 = 最终预测置信度
 
