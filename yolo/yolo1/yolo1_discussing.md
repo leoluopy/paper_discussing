@@ -1,8 +1,13 @@
 
-# YOLO V1 
+# YOLO V1 论文阅读总结和讨论
 
 look for [papers for yolo1](https://github.com/leoluopy/paper_discussing/blob/master/yolo/yolo1/yolo_1.pdf)
 contributer : [leoluopy](https://github.com/leoluopy)
+
++ 如果分享内容对你有帮助和启发，欢迎start / fork / follow 谢谢 ^_^ !
++ 由于知识有限，内容有错误，欢迎请提issue 谢谢 ^_^!
++ 如果对内容有疑问，欢迎提issue 谢谢 ^_^!
++ 如果你最近也有读深度学习相关paper ， 能认识更多志同道合朋友，还不加入分享 ？？   ^_^! 联系微信：leoluopy
 
 # Overview
 
@@ -22,6 +27,8 @@ contributer : [leoluopy](https://github.com/leoluopy)
 >这也是yolo1的弱点，每个网格只有一个类，如果多个类在同一个网格，那么就会出现漏检，特别是小目标。。
 
 每一个BoundingBox回归的是（x，y，w，h）还有一个confidence：代表是否有对象的置信度。
+
+> w 和 h 被回归到原图像的比例 【0,1】 之间 ， x，y 被回归为对应 网格的 offset 也在 【0,1】 之间
 
 + 因此他全连接层最后的tensor 为： （B×5 +C ）× S × S
 
@@ -52,8 +59,33 @@ contributer : [leoluopy](https://github.com/leoluopy)
 随后加入训练所需要的全连接层。在训练一周后得到了在ImageNet上，top5：88% 的结果。截取方法如上图所示。
 
 
+## Loss 设计及训练方法
+
+![](./loss.png)
+
++ i,j 表示：第i个网格,其中第j个Box，梯度惩罚仅针对：有目标的网格，以及网格里面有正确Box的备选Box。 
++ batch size：64 ，momentum： 0.9 ， decay： 0.0005 TODO： 优化方法， 
++ 学习率： 为了避免过大的学习率使得模型陷入局部最优无法继续下降loss，首个epoch，缓慢提升学习率从10^-3 至 10^-2 ，10^-2 学习75个epoch，10^-3 学习30个epoch，10^-4 学习40epoch
++ drop out layer使用 0.5 ，这样避免了层与层之间的固定神经元连接的自动过拟合适应。
++ 图像增广：原图100%-120% 大小缩放和旋转，HSV空间到1.5比率的曝光和饱和度调整。
++ 
+
+
+
+比例参数
+
+根号，这种处理可以部分优化，但本质上仍然对于大小box的loss采用了一致的处理，在模型训练完成后的表现上，确实也出现yolo的检测卡特点：良好定位没问题，完美定位效果不太好。
+
+BoundingBox 专用功能
 
 
 
 
+
+## 其他知识点
+
+![](./leaky_linear.png)
+
++ 最后一层激活使用 linear ， 其他的激活使用 leaky rectified linear [激活函数公式见上图]
++ 对比FasterRcnn 这样网络，yolo 有更多的框不准问题，而FasterRcnn有更多的直接预测背景为目标。
 
