@@ -11,7 +11,25 @@ contributer : [leoluopy](https://github.com/leoluopy)
 
 # Overview
 
-+ 
++ 提出一种新型半监督的学习方法未标注boundingBox的分类图像来学习box检测任务
++ yolo1的升级版本，更快，更准。
+
+## 结构综述
+
+![](./darknet19.png)
+
+darknet19
+
+## 性能与速率提升
+
++ BN
++ 预训练分辨率提升
++ AnchorBox
++ 先验框聚类
++ 细粒度特征
++ 多尺度训练
++ 分类器训练
++ 检测器训练
 
 
 
