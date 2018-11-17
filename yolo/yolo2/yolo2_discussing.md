@@ -33,15 +33,15 @@ contributer : [leoluopy](https://github.com/leoluopy)
 
 ![](./predict_tensor.PNG)
 
-对于每个网格预测B个Box和每个Box是否有对象。另外对于每个网格仅预测一个类，而不是每个网格都预测类。
-
->这也是yolo1的弱点，每个网格只有一个类，如果多个类在同一个网格，那么就会出现漏检，特别是小目标。。
+对比YOLOv1预测tensor： （B×5 +C ）× S × S 
 
 每一个BoundingBox回归的是（x，y，w，h）还有一个confidence：代表是否有对象的置信度。
 
-> w 和 h 被回归到原图像的比例 【0,1】 之间 ， x，y 被回归为对应 网格的 offset 也在 【0,1】 之间
+YOLOv2 做出了扩展和改进 预测tensor：（B×5 × C ）× S × S 
+B是Bounding Box 个数，也是YOLOV2 通过聚类得到的先验框个数。YOLOV2 对于每个Box都做了类别的预测。Cx 和Cy 是网格位置，Pw 和 Ph 是先验框参考长宽。
 
-+ 因此他全连接层最后的tensor 为： （B×5 +C ）× S × S
+> 由于这种新机制的加入，每个cell会预测多个Box和多个类别，使得Yolov2对于小目标和单个网格多目标的检测效果得到不错提升。在顶级比赛中超越了当时的 FasterRCNN 系列和 SSD 系列。
+
 
 
 ## 模型及训练方法
