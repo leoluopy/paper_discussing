@@ -26,7 +26,7 @@ contributer : [leoluopy](https://github.com/leoluopy)
 
 >这也是yolo1的弱点，每个网格只有一个类，如果多个类在同一个网格，那么就会出现漏检，特别是小目标。。
 
-每一个BoundingBox回归的是（x，y，w，h）还有一个confidence：代表是否有对象的置信度。
+每一个BoundingBox回归的是（x，y，w，h，confidence）还有一个confidence：代表是否有对象的置信度。
 
 > w 和 h 被回归到原图像的比例 【0,1】 之间 ， x，y 被回归为对应 网格的 offset 也在 【0,1】 之间
 

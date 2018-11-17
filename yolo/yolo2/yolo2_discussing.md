@@ -35,9 +35,10 @@ contributer : [leoluopy](https://github.com/leoluopy)
 
 对比YOLOv1预测tensor： （B×5 +C ）× S × S 
 
-每一个BoundingBox回归的是（x，y，w，h）还有一个confidence：代表是否有对象的置信度。
+每一个BoundingBox回归的是（x，y，w，h ，confidence）还有一个confidence：代表是否有对象的置信度。
 
 YOLOv2 做出了扩展和改进 预测tensor：（B×5 × C ）× S × S 
+
 B是Bounding Box 个数，也是YOLOV2 通过聚类得到的先验框个数。YOLOV2 对于每个Box都做了类别的预测。Cx 和Cy 是网格位置，Pw 和 Ph 是先验框参考长宽。
 
 > 由于这种新机制的加入，每个cell会预测多个Box和多个类别，使得Yolov2对于小目标和单个网格多目标的检测效果得到不错提升。在顶级比赛中超越了当时的 FasterRCNN 系列和 SSD 系列。
@@ -48,16 +49,22 @@ B是Bounding Box 个数，也是YOLOV2 通过聚类得到的先验框个数。YO
 
 ![](./darknet19.png)
 
-darknet19
 + 类似VGG模型，3x3卷积提取特征，在pool层降维后扩充特征提取深度至filter数2倍。在feature压缩上仍然使用1x1卷积，和yolo1一致。
 + 每个卷积层后加入BN，加速梯度下降。
-+ 224 分辨率分类网络训练： 72.9% top-1 accuracy and 91.2% top-5 accuracy on ImageNet
-+ 224 网络训练方法：
-    * 160 epochs , momentum SGD优化方法
-    * ![](./polynomial.png)
-    * 起始学习率 0.1,多项式衰减 power：4 ，decay： 0005  ， momentum ： 0.9
-+ 448 分辨率分类网络训练： a top-1 accuracy of 76.5% and a top-5 accuracy of 93.3%
-+ 图像增广方法：中心裁剪, 图像旋转, 色相调整, 饱和调整, 曝光调整
++ 分类网络的训练：
+    + 224 分辨率分类网络训练： 72.9% top-1 accuracy and 91.2% top-5 accuracy on ImageNet
+    + 224 网络训练方法：
+        * 160 epochs , momentum SGD优化方法
+        * ![](./polynomial.png)
+        * 起始学习率 0.1,多项式衰减 power：4 ，decay： 0005  ， momentum ： 0.9
+    + 448 分辨率分类网络训练： a top-1 accuracy of 76.5% and a top-5 accuracy of 93.3%
+    + 图像增广方法：中心裁剪, 图像旋转, 色相调整, 饱和调整, 曝光调整
+
+
++ 基于分类网络作为backbone修改为检测网络：
++ 检测网络训练：
+
+
 ## 性能与速率提升
 
 + BN
@@ -71,3 +78,7 @@ darknet19
 
 
 
+## 其他知识点
+
++ 
++ 
