@@ -29,7 +29,9 @@ contributer : [leoluopy](https://github.com/leoluopy)
 |512|16x16|
 |608|19x19|
 
-对于预测时的tensor如下图所示：
+对于预测时的Anchor以及tensor如下图所示：
+
+![](./Anchor.png)
 
 ![](./predict_tensor.PNG)
 
@@ -56,21 +58,30 @@ B是Bounding Box 个数，也是YOLOV2 通过聚类得到的先验框个数。YO
     + 224 网络训练方法：
         * 160 epochs , momentum SGD优化方法
         * ![](./polynomial.png)
-        * 起始学习率 0.1,多项式衰减 power：4 ，decay： 0005  ， momentum ： 0.9
-    + 448 分辨率分类网络训练： a top-1 accuracy of 76.5% and a top-5 accuracy of 93.3%
+        * 起始学习率 0.1,多项式衰减 power：4 ，decay： 0.0005  ， momentum ： 0.9
+    + 448 分辨率分类网络训练（全卷积网络直接finetune）： a top-1 accuracy of 76.5% and a top-5 accuracy of 93.3%
     + 图像增广方法：中心裁剪, 图像旋转, 色相调整, 饱和调整, 曝光调整
 
 
 + 基于分类网络作为backbone修改为检测网络：
+    + 去除最后一层卷积网络，替换为3x3和1024个filter的卷积网络，随后再跟一层1x1卷积网络（filter数目就是最后需要输出的tensor）
 + 检测网络训练：
+    + 训练超参：10^-3 前60epoch ，10^-4 第60-90 epoch,10^-5第90-160 epoch
+    + 使用momentum优化方法 decay：0.0005
 
 
 ## 性能与速率提升
 
-+ BN
-+ 预训练分辨率提升
-+ AnchorBox
-+ 先验框聚类
+![](./netcontribute.png)
+
++ 对于每个卷积层后加入BN，给mAP贡献大约2个点。
++ 预训练分辨率提升（先224分辨率训练，随后448分辨率训练高分辨率分类器），给mAP贡献约4个点
++ AnchorBox使得预测框数量大量增加，对于mAP影响不大，但提高了召回
+    + No Anchor：69.5 mAP with a recall of 81%
+    + With Anchor：69.2 mAP with a recall of 88%
+
++ ![](./cluster_anchor.png)
++ 先验框聚类选择K=5，保持了IOU，以及召回之间的平衡。
 + 细粒度特征
 + 多尺度训练
 + 分类器训练
