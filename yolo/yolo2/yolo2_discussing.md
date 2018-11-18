@@ -91,10 +91,16 @@ B是Bounding Box 个数，也是YOLOV2 通过聚类得到的先验框个数。YO
 + 分类器训练 见上文
 + 检测器训练 见上文
 
-## 9000类别的半监督检测器
+## 9000类别检测器的半监督训练
 
+![](./wordtree.png)
 
-## 其他知识点
+使用wordNet构建如上图所示，树状分类label网络。
 
-+ 
-+ 
+![](./predict9000.png)
+
+ImageNet对1000个类直接使用softmax分类，因为类之间互斥。新建的wordTree，对同义类之间使用SoftMax。
+> 同义类之间不存在绝对的互斥关系，特别是父子关系的类别，不存在互斥关系
+
+对于没有detection标签的数据训练方式：对于分类loss的反向传播不变，随后找到对于该分类预测置信度最高的BoundingBox，使用这个BoundingBox的信息来做反向传播，并且假设和groundTruth至少有0.3的IOU
+；使用这种方法在COCO这种本来就有detection label的类别上取得了不错的效果，但是比如想clothing ， sunglasses 这样在COCO上没有的数据，就没有取得比较好的效果。
