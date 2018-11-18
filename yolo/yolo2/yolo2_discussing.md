@@ -82,7 +82,9 @@ B是Bounding Box 个数，也是YOLOV2 通过聚类得到的先验框个数。YO
 
 + ![](./cluster_anchor.png)
 + 先验框聚类选择K=5，保持了IOU，以及召回之间的平衡。
-TODO
+
+![](./detectarch.png)
+
 + 细粒度特征  原始维度：13x13x1024 (详见上文检测网络修改) + passthrough layer： 26x26x512 -》 13x13x2048，类似于resNet的shortCut机制，给mAP贡献了大约1个点。
 + 多尺度训练 每10个epoch切换输入图像输入维度，图像维度： {320, 352, ..., 608}，由此，yolo网络在训练中得到了对多个尺度下输入图片的鲁棒性，并且在多个图像大小情况下，非常便捷得到速度与精度的折中。只需要修改输入图像大小即可，而网络没有发生变化。。
     > smallest option is 320 × 320 and the largest is 608 × 608
