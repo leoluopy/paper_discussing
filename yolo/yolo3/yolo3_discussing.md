@@ -1,5 +1,5 @@
 
-# YOLO V2 论文阅读总结和讨论
+# YOLO V3 论文阅读总结和讨论
 
 look for [papers for yolo3](https://github.com/leoluopy/paper_discussing/blob/master/yolo/yolo3/YOLOv3.pdf)
 contributer : [leoluopy](https://github.com/leoluopy)
