@@ -35,11 +35,11 @@ contributer : [leoluopy](https://github.com/leoluopy)
 
 ![](./predict_tensor.PNG)
 
-对比YOLOv1预测tensor： （B×5 +C ）× S × S 
+对比YOLOv1预测tensor： （5 x B +C ）× S × S 
 
 每一个BoundingBox回归的是（x，y，w，h ，confidence）还有一个confidence：代表是否有对象的置信度。
 
-YOLOv2 做出了扩展和改进 预测tensor：（B×5 × C ）× S × S 
+YOLOv2 做出了扩展和改进 预测tensor：（B x (5 + C) ）× S × S : 每个BoundingBox，都做预测类别。
 
 B是Bounding Box 个数，也是YOLOV2 通过聚类得到的先验框个数。YOLOV2 对于每个Box都做了类别的预测。Cx 和Cy 是网格位置，Pw 和 Ph 是先验框参考长宽。
 

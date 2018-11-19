@@ -21,5 +21,5 @@ contributer : [leoluopy](https://github.com/leoluopy)
 ## 与YOLOV2 对比清单
 
 + ![](./predict_tensor.PNG)
-+ 使用相同的 BoundingBox 预测tensor , 并且每一个box仅预测一个object
-+ 
++ 使用相同的 BoundingBox 预测tensor , 通过nms，每一个box仅预测一个object
++ 与v2 不同，增加了更多尺度，使用了 3个尺度进行预测。
