@@ -31,3 +31,8 @@ contributer : [leoluopy](https://github.com/leoluopy)
 + ![](./darknet2resnet.png)
 + Darknet-53 在相似准确率情况下对于 ResNet-101 快一半. Darknet-53 比 ResNet-152 快一倍 （速度测试在 TITAN X）
 + 在训练方法上与YOLOv2基本保持一致，没有对困难样本单独处理，仍然是多尺度训练，每层卷积后加BN，图像采用多种数据增强。
+
+## 最后送上两幅结构图：
+![](./tiny.png)
+![](./full.png)
+
