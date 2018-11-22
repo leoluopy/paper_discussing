@@ -26,13 +26,12 @@ contributer : [leoluopy](https://github.com/leoluopy)
     > On the COCO dataset the 9 clusters were:
 (10 × 13), (16 × 30), (33 × 23), (30 × 61), (62 × 45), (59 ×
 119), (116 × 90), (156 × 198), (373 × 326).
-+ ![](./darknet53arch.png)
++ ![](./darknet53_arch.png)
 + 特征提取器更新为：darknet53。 网络设计思路： 仍然采用3x3卷积提取特征，1x1卷积进行特征压缩 ； 另外在特征提取网络中也加入类似与resnet中的 shortCut机制。
 + ![](./darknet2resnet.png)
 + Darknet-53 在相似准确率情况下对于 ResNet-101 快一半. Darknet-53 比 ResNet-152 快一倍 （速度测试在 TITAN X）
 + 在训练方法上与YOLOv2基本保持一致，没有对困难样本单独处理，仍然是多尺度训练，每层卷积后加BN，图像采用多种数据增强。
 
 ## 最后送上两幅结构图：
-![](./tiny.png)
-![](./full.png)
+![](./yolov3_arch.png)
 
