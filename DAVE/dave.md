@@ -1,8 +1,8 @@
 
 
-# YOLO V1 论文阅读总结和讨论
+# 自动驾驶DAVE系统 论文阅读总结和讨论
 
-look for [papers for yolo1](./End+to+End+Learning+for+Self-Driving+Cars.pdf)
+look for [papers for dave](./End+to+End+Learning+for+Self-Driving+Cars.pdf)
 contributer : [leoluopy](https://github.com/leoluopy)
 
 + 如果分享内容对你有帮助和启发，欢迎start / fork / follow 谢谢 ^_^ !
