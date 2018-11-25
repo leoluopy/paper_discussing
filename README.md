@@ -12,5 +12,6 @@ for yolo2 dicussing at : [yolo2/YOLO9000](https://github.com/leoluopy/paper_disc
 
 for yolo3 dicussing at : [yolo3](https://github.com/leoluopy/paper_discussing/blob/master/yolo/yolo3/yolo3_discussing.md)
 
+for dave discussing at: [dave](./DAVE/dave.md)
 
 
