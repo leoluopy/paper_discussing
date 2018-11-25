@@ -42,8 +42,11 @@ contributer : [leoluopy](https://github.com/leoluopy)
 
 ## 卷积层可视化
 ![](./unpaved_road.PNG)
+
 从可视化可见，没有道路轮廓的标注等信息，网络学习到了，道路信息。
+
 ![](./forest.PNG)
+
 从可视化可见，前方无路时，网络呈现出全部是噪音。
 
 
