@@ -5,10 +5,9 @@
 look for [papers for dave](./End+to+End+Learning+for+Self-Driving+Cars.pdf)
 contributer : [leoluopy](https://github.com/leoluopy)
 
-+ 如果分享内容对你有帮助和启发，欢迎start / fork / follow 谢谢 ^_^ !
-+ 由于知识有限，内容有错误，欢迎请提issue 谢谢 ^_^!
-+ 如果对内容有疑问，欢迎提issue 谢谢 ^_^!
-+ 如果你最近也有读深度学习相关paper ， 能认识更多志同道合朋友，还不加入分享 ？？   ^_^! 联系微信：leoluopy
++ 欢迎提issue.
++ 欢迎watch ，star，实时讨论前沿分享
++ 欢迎加入分享：联系微信：leoluopy
 
 # Overview
 + 端到端的解决方案，不需要分解各个步骤列如，感知，定位，规划，控制。 更好的表现，更小的系统。
