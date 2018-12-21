@@ -47,7 +47,8 @@ contributer : [leoluopy](https://github.com/leoluopy)
 
 （m,n,8） : m,n 是 特征图长宽，有车牌confidence ， 无车牌confidence ， 6个二维仿射变换参数。
 + ![](./arch_wpodnet.png)
-
+> 网络如上图所示，总共由21个卷积层组成，14个卷积层在resblock中，所有的卷积核都为3x3.他们都使用了RELU作为激活函数，
+只有在仿射变换参数的激活中采用了LINEAR（f(x)=x）。网络一共有4个最大池化层，也就是输入图片缩放尺度为:16.
 
 ## WPOD-Net Loss 设计
 
