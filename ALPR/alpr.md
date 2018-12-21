@@ -36,12 +36,18 @@ contributer : [leoluopy](https://github.com/leoluopy)
 + ![](./code_resize1.png)
 + ![](./code_resize2.png)
 > 双* 号是指数操作
+
 > 双冒号代表list中取元素位置和步长。
+
 > 同时，代码中做了 对16可整除的对齐操作（为适配后面WpodNet卷积）
+
 ### WPOD-Net 结构
 + ![](./wpodnet_process.png)
-+ 
++ > WPOD-Net 是一个全卷积网络，可以输入任意尺寸的图片（但是需要能整除16），最后生成Ns/16 的特征图。特征图上每个点八个通道tensor如下：
+
+（m,n,8） : m,n 是 特征图长宽，有车牌confidence ， 无车牌confidence ， 6个二维仿射变换参数。
 + ![](./arch_wpodnet.png)
+
 
 ## WPOD-Net Loss 设计
 
