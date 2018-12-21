@@ -26,12 +26,22 @@ contributer : [leoluopy](https://github.com/leoluopy)
 
 
 ## WPOD-Net 处理流及网络结构
+### RESIZE 预处理
 + resize已经检测出的车辆
 + ![](./resize.png)
-+ 参考代码：
++ 在resize图片采用了如下思路：
+> 在车牌无倾角时，往往车牌有足够的像素用于车牌识别，但是车辆照片有倾斜度时，车牌和车辆比例会减小不少，这不利于车牌的提取。
+基于此，作者使用此思路来提高，在车辆照片有角度时，放大图片，以放大车牌像素。而在车辆照片像素本来就很大时，采用了Max=608做了相应的缩小。
++ 参考代码 【以下代码是公式的实现】：
 + ![](./code_resize1.png)
 + ![](./code_resize2.png)
-
+> 双* 号是指数操作
+> 双冒号代表list中取元素位置和步长。
+> 同时，代码中做了 对16可整除的对齐操作（为适配后面WpodNet卷积）
+### WPOD-Net 结构
++ ![](./wpodnet_process.png)
++ 
++ ![](./arch_wpodnet.png)
 
 ## WPOD-Net Loss 设计
 
