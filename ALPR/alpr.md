@@ -56,6 +56,27 @@ contributer : [leoluopy](https://github.com/leoluopy)
 + 置信度loss采用类似于SSD中对数loss的设计方法见下图：
 ![](./probe_loss.png)
 
++ 仿射变换loss由两部分组成
+![](./affine_loss.png)
+![](./affine_A.png)
+![](./affine_T.png)
+
+> Tmn： 其中q是基于原点的单位矩阵。
+
+> Tmn： max(v, 0) 是仿射变换数学性质中保证没有异常的镜像和旋转。
+
+> Tmn： v3,v4,v5,v6 负责形状变换，v7，v8是bias负责少量平移
+
+> Amn： 其中p是gt，是标注车牌的8个点。
+
+> Amn: Ns 是缩放因子，如果网络是4层最大池化，Ns = 2 ** 4 = 16
+
+> Amn: m和n是原图经过特征提取后得到的特征图cell。
+
+> Amn: a 是经验参数，目的是将按照特征图比例缩放和平移后的 车牌形状能更加贴近缩放到单位矩阵尺寸的车牌大小。
+
+TODO： loss 代码。
+
 ## WPOD-Net 数据增广及训练方法
 
 
