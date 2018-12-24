@@ -58,7 +58,9 @@ contributer : [leoluopy](https://github.com/leoluopy)
 
 + 仿射变换loss由两部分组成
 ![](./affine_loss.png)
-![](./affine_A.png)
+
+> 总体loss设计思路，利于仿射参数和特征图格子，通过仿射变换和平移构造单位尺度车牌，对等相减实现loss设计。
+
 ![](./affine_T.png)
 
 > Tmn： 其中q是基于原点的单位矩阵。
@@ -66,6 +68,8 @@ contributer : [leoluopy](https://github.com/leoluopy)
 > Tmn： max(v, 0) 是仿射变换数学性质中保证没有异常的镜像和旋转。
 
 > Tmn： v3,v4,v5,v6 负责形状变换，v7，v8是bias负责少量平移
+
+![](./affine_A.png)
 
 > Amn： 其中p是gt，是标注车牌的8个点。
 
@@ -78,7 +82,11 @@ contributer : [leoluopy](https://github.com/leoluopy)
 TODO： loss 代码。
 
 ## WPOD-Net 数据增广及训练方法
-
++ ![](./train_eg1.png)
++ 训练样本很多，但是标注不多，标注一共只有196张，采用真实图像增广和合成图像，以及合成图像增广的方法增加样本集合。
++ ![](./train_eg2.png)
++ 采用的数据处理方法：
+    + 
 
 ## 整体系统 结果对比
 
