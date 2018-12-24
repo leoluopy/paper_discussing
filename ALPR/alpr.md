@@ -79,7 +79,6 @@ contributer : [leoluopy](https://github.com/leoluopy)
 
 > Amn: a 是经验参数，目的是将按照特征图比例缩放和平移后的 车牌形状能更加贴近缩放到单位矩阵尺寸的车牌大小。
 
-TODO： loss 代码。
 
 ## WPOD-Net 数据增广及训练方法
 + ![](./train_eg1.png)
@@ -99,3 +98,5 @@ TODO： loss 代码。
 
 ## 整体系统 结果对比
 
+![](./ret_alpr.png)
+![](./ret_ocr.png)
