@@ -51,7 +51,10 @@ contributer : [leoluopy](https://github.com/leoluopy)
 只有在仿射变换参数的激活中采用了LINEAR（f(x)=x）。网络一共有4个最大池化层，也就是输入图片缩放尺度为:16.
 
 ## WPOD-Net Loss 设计
-
+![](./whole_loss.png)
+> 全局loss由两部分构成，有无对象置信度loss和仿射变换参数loss。如上图所示。
++ 置信度loss采用类似于SSD中对数loss的设计方法见下图：
+![](./probe_loss.png)
 
 ## WPOD-Net 数据增广及训练方法
 
