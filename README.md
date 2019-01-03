@@ -1,9 +1,10 @@
 # paper_dicussing
 
 
-+ 欢迎提issue.
-+ 欢迎watch ，star，实时讨论前沿分享
-+ 欢迎加入分享：联系微信：leoluopy
++ 欢迎提issue.欢迎watch ，star.
++ 微信号：leoluopy
++ 关注AI前沿技术及商业落地，欢迎交流
+![](./wechat_id.jpeg)
 
 |领域|亮点|出处|论文|
 |:----:|:----:|:----:|:----:|
