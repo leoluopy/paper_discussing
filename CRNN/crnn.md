@@ -39,11 +39,39 @@ contributer : [leoluopy](https://github.com/leoluopy)
 
 ### CNN 特征提取
 + ![](./feature_extra.png)
-
-
++ Scale 高度固定32，长度可变，可适应不同长度字符串图片
++ 改进网络，第3层池化，和第4层池化采用了1x2维度，用以获得更长的特征，在比较窄的字符上能有更强的表达力（比如 i l 这样的字符）
++ 参考代码：高度scale到32，宽度对应进行scale，最后进行相应数据空间变换：
+```angular2html
+    def __call__(self, img):
+        size = self.size
+        imgW, imgH = size
+        scale = img.size[1] * 1.0 / imgH
+        w = img.size[0] / scale
+        w = int(w)
+        img = img.resize((w, imgH), self.interpolation)
+        w, h = img.size
+        if w <= imgW:
+            newImage = np.zeros((imgH, imgW), dtype='uint8')
+            newImage[:] = 255
+            newImage[:, :w] = np.array(img)
+            img = Image.fromarray(newImage)
+        else:
+            img = img.resize((imgW, imgH), self.interpolation)
+            # img = (np.array(img)/255.0-0.5)/0.5
+        img = transforms.ToTensor()(img)
+        img.sub_(0.5).div_(0.5)
+        return img
+```
 ### RNN 结构
 + ![](./rnn_lstm.png)
++ 前后信息， 稳定，信息更丰富，模糊图像兼容能力。
+反向传递微分
+可变长
 
+Bi-lstm 组成。和方法。
+传统rnn 有梯度消失问题，无法记录较长序列，lstm专门为此设计。
+双向lstm 使用节点前和节点后数据，效果提升
 
 ### Translation 层
 ![](./label_sequence.png)
