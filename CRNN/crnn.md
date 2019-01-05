@@ -15,28 +15,36 @@ contributer : [leoluopy](https://github.com/leoluopy)
 # Overview
 + 
 + 
++ 
 
 ## 性能对比
+![](./result_compare.png)
 
 
 ## 结构综述 【pipeline 总体流程】
-+ 
++ ![](./full_arch.png)
++ ![](./arch_param.png)
 
 
 
-### CNN 结构
-+ 
+### CNN 特征提取
++ ![](./feature_extra.png)
+
 
 ### RNN 结构
++ ![](./rnn_lstm.png)
 
 
 ### Translation 层
+![](./label_sequence.png)
 
+### 特性对比
+![](./feature_compare.png)
 
 ## loss设计
+![](loss.png)
 
-
-## 训练方法
-
+## 超参及训练方法
+![](./edit_dis.png)
 
 
