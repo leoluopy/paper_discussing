@@ -70,8 +70,40 @@ contributer : [leoluopy](https://github.com/leoluopy)
 + RNN 接受可变长输入特征，使得本网络支持可变长的字符识别。
 + 传统rnn 有梯度消失问题，无法记录较长序列，lstm专门为此设计。
 + 双向lstm 使用节点前和节点后数据，效果提升
++ lstm 参考代码：
+```angular2html
 
+class BidirectionalLSTM(nn.Module):
 
+    def __init__(self, nIn, nHidden, nOut):
+        '''
+            pytorch 实现的 LSTM
+        :param nIn: 输入特征
+        :param nHidden: 隐藏单元
+        :param nOut: 输出序列
+        '''
+        super(BidirectionalLSTM, self).__init__()
+
+        self.rnn = nn.LSTM(nIn, nHidden, bidirectional=True)
+        self.embedding = nn.Linear(nHidden * 2, nOut)
+
+    def forward(self, input):
+        recurrent, _ = self.rnn(input)
+        ''' rnn 返回
+        Outputs: output, (h_n, c_n)
+        output of shape (seq_len, batch, num_directions * hidden_size)
+        h_n of shape (num_layers * num_directions, batch, hidden_size)
+        c_n (num_layers * num_directions, batch, hidden_size) 
+        '''
+        T, b, h = recurrent.size()
+        t_rec = recurrent.view(T * b, h)
+
+        output = self.embedding(t_rec)  # [T * b, nOut]
+        output = output.view(T, b, -1)
+
+        return output
+```
+> view 是pytorch中常用的变换维度函数，使用方便。
 ### Translation 层
 ![](./label_sequence.png)
 
