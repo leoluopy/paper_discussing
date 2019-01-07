@@ -105,9 +105,8 @@ class BidirectionalLSTM(nn.Module):
 ```
 > view 是pytorch中常用的变换维度函数，使用方便。
 ### Transcription 层（转换层）
-+ ctc
-
 ![](./label_sequence.png)
++ 概率预测采用 [ctc](https://distill.pub/2017/ctc/) 预测。
 + l 表示最后输出label序列
 + y 表示转换层输入序列（预测序列长度x字符类别数）
 + π 表示原始预测label序列 例如（--hh-e-l-ll-oo--）
