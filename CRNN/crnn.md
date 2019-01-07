@@ -135,6 +135,7 @@ class BidirectionalLSTM(nn.Module):
 
 ## loss设计
 ![](loss.png)
++ 网络采用[对数损失，点我详细介绍](https://www.cnblogs.com/klchang/p/9217551.html)
 
 ## 超参及训练方法
 ![](./edit_dis.png)
