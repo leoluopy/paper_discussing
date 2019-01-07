@@ -104,8 +104,32 @@ class BidirectionalLSTM(nn.Module):
         return output
 ```
 > view 是pytorch中常用的变换维度函数，使用方便。
-### Translation 层
+### Transcription 层（转换层）
++ ctc
+
 ![](./label_sequence.png)
++ l 表示最后输出label序列
++ y 表示转换层输入序列（预测序列长度x字符类别数）
++ π 表示原始预测label序列 例如（--hh-e-l-ll-oo--）
++ β 表示原始预测label序列 映射 输出label序列方法 ： 去掉空字符，去掉连续字符。
+```angular2html
+    # preds 为 RNN 输出结构
+    preds = self.model(image)
+    _, preds = preds.max(2)
+    # contiguous() 调整为连续内存
+    preds = preds.transpose(1, 0).contiguous().view(-1)
+    preds_size = Variable(torch.IntTensor([preds.size(0)]))
+    sim_pred = self.converter.decode(preds.data, preds_size.data, raw=False)
+```
+
+```angular2html
+    ###### decode 代码核心 ： 字符不为空， 上一个字符和当个字符不相同
+    char_list = []
+    for i in range(length):
+        if t[i] != 0 and (not (i > 0 and t[i - 1] == t[i])):
+            char_list.append(self.alphabet[t[i] - 1])
+    return ''.join(char_list)
+```
 
 ### 特性对比
 ![](./feature_compare.png)
