@@ -16,26 +16,46 @@ contributer : [leoluopy](https://github.com/leoluopy)
 + 
 > 
 ## 性能对比
-![](./result_compare.png)
->
+![](./compare_PSNR_SSIM.png)
 
-## 结构综述 【pipeline 总体流程】
+![](./output.png)
+
+## 结构综述
+![](./network.png)
 + 
 
+## GAN 提要
+![](./GAN_loss_ori.png)
 
-### CNN 特征提取
+![](./W-distance.png)
+
+![](./WGAN-loss.png)
+
+![](./WGAN-GP.png)
+
+> 先讲GAN的必要性？
+
 + 
-### RNN 结构
-+ 
-### Transcription 层（转换层）
+
+## loss 方法
+![](./deblurGAN-loss.png)
+
+![](./deblurGAN-GAN-loss.PNG)
+
+![](./deblurGAN-content-loss.png)
 
 
-### 特性对比
-![](./feature_compare.png)
-+ 
 
-## loss 方法。
-+ 
+## Training 方法
+![](./training_sketch_map.PNG)
+
+
+
+## 在目标检测中的贡献
+![](./detection-contribute.png)
+
+![](./detection-contribute2.png)
+ 
 
 
 
