@@ -7,8 +7,9 @@
 
 <img width="200" height="200" src="https://github.com/leoluopy/paper_discussing/blob/master/wechat_id.jpeg"/>
 
-|领域|亮点|出处|论文|
+|领域|亮点|出处|笔记详情|
 |:----:|:----:|:----:|:----:|
+|图像修复|模糊，超分辨率多领域，更快速率，更高精度|ECCV2018|[deblurGAN](./GAN/deblurGAN/deblurGAN.md)|
 |CV车牌识别|非限制场景，大倾角，超过商业|ECCV2018|[alpr](./ALPR/alpr.md)|
 |CV自动驾驶|简洁端到端处理| CVPR2017|[dave](./DAVE/dave.md)|
 |OCR文字识别|端到端，不用对齐，无字典| PAMI2015|[crnn](./CRNN/crnn.md)|
