@@ -13,7 +13,7 @@ contributer : [leoluopy](https://github.com/leoluopy)
 
 
 # Overview(本篇笔记未完，待续。。。。。。。。)
-+ 端到端的条件GAN修复网络
++ 端到端的条件GAN修复网络,首个以不适定问题思路解决图像模糊修复问题
 + 在PSNR和SSIM参数对比情况下比同期deepblur快5倍
 + 提出新颖的模糊方法和新的使用检测网络评价优劣的手段
 
@@ -48,15 +48,21 @@ contributer : [leoluopy](https://github.com/leoluopy)
 ## GAN 提要
 ![](./GAN_loss_ori.png)
 
+> x 为输入图像，　Ｄ为判别器，Ｇ为生成器，　Ｐｒ图像分布，Ｐｇ为模型分布。
+> 原始GAN网络的loss设计，具有训练生成器或判别器不容易，并且不能对单独一方训练太好，导致梯度消失无法训练问题，同时原始ＧＡＮ也容易导致模式奔溃，导致生成的目标缺乏多样性。
+ 
 ![](./W-distance.png)
+
+> ＷＧＡＮ作者通过多篇的数学推导和数学论证，证明和说明了ＧＡＮ网络之所以难以训练的原因并给出了解决方案，提出了Ｗａｓｓｅｒｓｔｅｉｎ距离，如上图所示。
 
 ![](./WGAN-loss.png)
 
+> 
+
 ![](./WGAN-GP.png)
 
-> 先讲GAN的必要性？
-
-+ 
+> 
+ 
 
 ## loss 方法
 ![](./deblurGAN-loss.png)
