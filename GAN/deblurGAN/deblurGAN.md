@@ -69,14 +69,19 @@ contributer : [leoluopy](https://github.com/leoluopy)
 
 ## Training 方法
 ![](./training_sketch_map.PNG)
+> deblurGAN 输入原始模糊图像，通过生成器生成恢复后图像，恢复图像与原始ＧＴ做**content-loss** 和　**WGAN-loss** 优化
 
-
++ 参考的合成图像以及由高速相机造成的模糊图像比例设置２：１
++ 判别器训练５步，生成器训练１步，交替训练
++ 使用Adam优化器训练,首个150epoch :学习率10^-4,随后150epoch学习率线性降低至０
++ dropOut 和 instanceNorm 在推理阶段仍然使用
++ batch size 设置为1, 在GoPro 数据集大约训练需要6天
 
 ## 在目标检测中的贡献
 ![](./detection-contribute.png)
-
+> deblurGAN 对模糊图像的恢复能有效提高检测网络对目标检测的置信度
 ![](./detection-contribute2.png)
- 
+> 有效提高Recall 从而提高 F1
 
 
 
