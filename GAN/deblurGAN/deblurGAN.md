@@ -79,10 +79,21 @@ contributer : [leoluopy](https://github.com/leoluopy)
 
 ## 在目标检测中的贡献
 ![](./detection-contribute.png)
+
 > deblurGAN 对模糊图像的恢复能有效提高检测网络对目标检测的置信度
+
 ![](./detection-contribute2.png)
+
 > 有效提高Recall 从而提高 F1
 
 
+## 参考文章：
 
++ ＷＧＡＮ：　https://www.cnblogs.com/Allen-rg/p/10305125.html
++ ＷＧＡＮ－ＧＰ　：　https://blog.csdn.net/weixin_41036461/article/details/82385334
++ 理解　ＷＧＡＮ好训练：https://blog.csdn.net/xiaoxifei/article/details/86611566
++ KL,JS 散度，wassertein 距离：　https://zxth93.github.io/2017/09/27/KL%E6%95%A3%E5%BA%A6JS%E6%95%A3%E5%BA%A6Wasserstein%E8%B7%9D%E7%A6%BB/index.html
++ 论文译文：　https://blog.csdn.net/a312863063/article/details/86627030
++ 论文笔记１：　https://blog.csdn.net/yh0vlde8vg8ep9vge/article/details/78641844
++ 论文笔记２：https://zhuanlan.zhihu.com/p/32260634
 
