@@ -12,7 +12,7 @@ contributer : [leoluopy](https://github.com/leoluopy)
 <img width="200" height="200" src="https://github.com/leoluopy/paper_discussing/blob/master/wechat_id.jpeg"/>
 
 
-# Overview
+# Overview(本篇笔记未完，待续。。。。。。。。)
 + 端到端的条件GAN修复网络
 + 在PSNR和SSIM参数对比情况下比同期deepblur快5倍
 + 提出新颖的模糊方法和新的使用检测网络评价优劣的手段
