@@ -12,7 +12,7 @@ contributer : [leoluopy](https://github.com/leoluopy)
 <img width="200" height="200" src="https://github.com/leoluopy/paper_discussing/blob/master/wechat_id.jpeg"/>
 
 
-# Overview(本篇笔记未完，待续。。。。。。。。)
+# Overview
 + 端到端的条件GAN修复网络,首个以不适定问题思路解决图像模糊修复问题
 + 在PSNR和SSIM参数对比情况下比同期deepblur快5倍
 + 提出新颖的模糊方法和新的使用检测网络评价优劣的手段
@@ -60,18 +60,29 @@ contributer : [leoluopy](https://github.com/leoluopy)
 
 ![](./W-distance.png)
 
-> ＷＧＡＮ作者通过多篇的数学推导和数学论证，证明和说明了ＧＡＮ网络之所以难以训练的原因并给出了解决方案，提出了Ｗａｓｓｅｒｓｔｅｉｎ距离，如上图所示。
+> ＷＧＡＮ作者通过多篇的数学推导和数学论证，证明和说明了ＧＡＮ网络之所以难以训练的原因并给出了解决方案，Wasserstein距离，如上图所示。
+> Wasserstein距离相对于JS和KL散度，具备导数不突变，连续的特点，更加利于梯度平滑求导，利于深度学习训练。
+    
+    + 判别器最后一层去掉sigmoid
+    + 生成器和判别器的loss不取log
+    + 每次更新判别器的参数之后把它们的绝对值截断到不超过一个固定常数c
+    + 不要用基于动量的优化算法（包括momentum和Adam），推荐RMSProp，SGD也行
+> **关于更新参数截取使用的lipschitz常数理解**
 
-TODO: ＷＧＡＮ　为何这样改进。
-改进方法　距离　和　Ｌｏｓｓ
-
+> 假如不进行Lipschitz常数的限制，
+ 那么D会倾向于给fake sample打低分，给real sample打高分，而两者之间的D(X)会倾向于产生一个gap，这样对于与真实分布 
+ 与G映射出来的分布之间就形成不了有效的梯度，即G会不知道如何让fake sample改变来获得高分.
+ 加上Lipschitz限制条件之后，在D使得上面的损失函数最大化的时候，因为梯度不能太大，
+ D不能无脑的并且无限制的给fake打低分，给real打给分，因为这样会使得fake与real只之间的Lipschitz大于k，
+ 也就是加上此限制后，D(X)并不会在fake分布的区域打很低的分数，然后经历一个gap到real分布的很高的参数，
+ 而是在fake与real之间形成一个较为平缓的坡，fake处G可以了解到往哪里移动过可以获得更高的分数，从而解决对G来说梯度消失的问题。
+ 实现的时候想到了一个方法就是简单将参数clip，简单的限制到一个区间中，这样经过简单的乘加，Lipschitz必定是限制在某个上限下
+    
 ![](./WGAN-loss.png)
-
-> 
 
 ![](./WGAN-GP.png)
 
-> 
+> 基于以上的描述WGAN最终的Loss定义如上图两项所示。
  
 
 ## loss 方法
