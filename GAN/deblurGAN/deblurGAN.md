@@ -49,8 +49,15 @@ contributer : [leoluopy](https://github.com/leoluopy)
 ![](./GAN_loss_ori.png)
 
 > x 为输入图像，　Ｄ为判别器，Ｇ为生成器，　Ｐｒ图像分布，Ｐｇ为模型分布。
+
 > 原始GAN网络的loss设计，具有训练生成器或判别器不容易，并且不能对单独一方训练太好，导致梯度消失无法训练问题，同时原始ＧＡＮ也容易导致模式奔溃，导致生成的目标缺乏多样性。
- 
+
+> GAN网络难以训练的理解：
+  + ![](./KL.png) 
+  + ![](./JS.png)
+  + 上图公式图KL散度和JS散度，详细说明见参考文献。经过大神得到推导，GAN网络最终的优化目标实际上是求两个概率分布JS散度的最优值，
+  而当这两个概率分布完全不一致的时候，JS散度为常数，那么对应的梯度为0,在深度学习的框架实现中这一情况下，梯度也就几乎消失了。因此难以训练。
+
 ![](./W-distance.png)
 
 > ＷＧＡＮ作者通过多篇的数学推导和数学论证，证明和说明了ＧＡＮ网络之所以难以训练的原因并给出了解决方案，提出了Ｗａｓｓｅｒｓｔｅｉｎ距离，如上图所示。
@@ -102,6 +109,7 @@ TODO: ＷＧＡＮ　为何这样改进。
 + ＷＧＡＮ－ＧＰ　：　https://blog.csdn.net/weixin_41036461/article/details/82385334
 + 理解　ＷＧＡＮ好训练：https://blog.csdn.net/xiaoxifei/article/details/86611566
 + KL,JS 散度，wassertein 距离：　https://zxth93.github.io/2017/09/27/KL%E6%95%A3%E5%BA%A6JS%E6%95%A3%E5%BA%A6Wasserstein%E8%B7%9D%E7%A6%BB/index.html
++ JS 散度：https://www.cnblogs.com/smuxiaolei/p/7400923.html
 + 论文译文：　https://blog.csdn.net/a312863063/article/details/86627030
 + 论文笔记１：　https://blog.csdn.net/yh0vlde8vg8ep9vge/article/details/78641844
 + 论文笔记２：https://zhuanlan.zhihu.com/p/32260634
