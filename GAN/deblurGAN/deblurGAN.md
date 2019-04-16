@@ -92,12 +92,19 @@ contributer : [leoluopy](https://github.com/leoluopy)
 
 ## loss 方法
 ![](./deblurGAN-loss.png)
++ deblurGAN的loss函数由两部分组成,WGAN-loss和content-loss
++ WGAN-loss控制图像生成的真假判别性
++ content-loss控制生成图像的特征质量
 
 ![](./deblurGAN-GAN-loss.PNG)
-
+＋　WGAN－loss 在deblurGAN 中的表示形式
 ![](./deblurGAN-content-loss.png)
+> content-loss 详细表达形式，
 
-
+    + WH:特征图长宽
+    + IB:模糊图像, IS 清晰图像
+    + xy:特征图具体位置
+    + Φ: 提取当前特征图位置特征
 
 ## Training 方法
 ![](./training_sketch_map.PNG)
