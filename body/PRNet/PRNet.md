@@ -109,27 +109,42 @@ TODO： 换脸方法。
 ![](./net_mask.png)
 ![](./loss.png)
 
++ P(x,y) 是UV位置空间的预测结果,表征了UV图上对应像素的xyz位置
++ W(x,y) 是UV位置空间的权重,对UV空间进行权重控制,关键点:眼鼻嘴:脸部其他:其他 = 16:4:3:0
+
+TODO: 人脸纹理得到方式?
 
 # 训练细节
 
++ 训练数据来源: 使用了300W-LP数据集,
+    + 拥有各个角度的人脸数据,使用时scale到256x256
+    + 3DMM系数的标注
+    + 使用3DMM 生成3D点云,并转换3D点云至UV空间
+> 注: 虽然生成GT使用了3DMM的标注系数,但是模型本身不包含3DMM模型的任何线性约束.
++ 数据增广包含了所有的困难场景:
+    + 角度变换 -45 ~ 45 度
+    + 平移系数 0.9 ~ 1.2 (原图大小为基数)
+    + 颜色通道变换 0.6 ~ 1.4
+    + 添加噪音纹理遮挡,模拟真实情况遮挡.
++ adam优化器,初始学习率0.0001,每5个epoch,衰减1半,batch size:16
 
 
 # 测试结果
 ![](./face_alignment_ret.png)
 ![](./face_alignment_coor_ret.png)
-+
++ 
 
 ![](./face_alignment_table.png)
-+
++ 
 
 ![](./face_reconstruction_ret.png)
-+
++ 
 
 ![](./mesh_ret.png)
-+
++ 
 
 ![](./compare_with_gt.png)
-+
++ 
 
 
 
