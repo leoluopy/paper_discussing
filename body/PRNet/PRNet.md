@@ -132,19 +132,22 @@ TODO: 人脸纹理得到方式?
 # 测试结果
 ![](./face_alignment_ret.png)
 ![](./face_alignment_coor_ret.png)
-+ 
++ 上面两图记录了68个关键点和所有点的CED曲线走向情况,总的来说都有不少提升.
 
 ![](./face_alignment_table.png)
-+ 
++ 角度变化情况下的,3D人脸关键点的NME效果对比
 
 ![](./face_reconstruction_ret.png)
-+ 
++ 上图使用了瞳间距作为归一化分母,这样更加形象的表达了算法效果.
+
+![](./runtime.png)
++ 推理时间[1080显卡]
 
 ![](./mesh_ret.png)
-+ 
++ 与各种方法比如VRN在不同角度下,和3d稠密重建效果的对比.
 
 ![](./compare_with_gt.png)
-+ 
++ 部分推理结果超过GT,训练过程忽略掉的GT噪声
 
 
 
