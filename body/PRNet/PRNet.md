@@ -39,8 +39,7 @@ contributer : [leoluopy](https://github.com/leoluopy)
 > 第一排第一张是原始图片，第一排第二张是将人脸RGB通道映射到UV空间的对应位置【UV空间纹理图】，第一排第三张是UV空间位置图，每个通道表示对应纹理的xyz。
 
 > 第二排是 UV空间的位置图三个通道的展开。
-
-TODO： GT 代码中体现
+> GT 就是ＵＶ位置空间，在代码中维度是（256,256,3）
 
 # 网络结构
 ![](./net_structure.png)
@@ -102,9 +101,6 @@ def resBlock(x, num_outputs, kernel_size = 4, stride=1, activation_fn=tf.nn.relu
 > 网络结构如上图所示，有两部分组成，网络残差和反卷积。最后激活使用sigmoid得到输出UV空间。
 
 
-TODO： pos 得到， landmark， 纹理位置。
-TODO： 换脸方法。
-
 # Loss设计
 ![](./net_mask.png)
 ![](./loss.png)
@@ -112,7 +108,6 @@ TODO： 换脸方法。
 + P(x,y) 是UV位置空间的预测结果,表征了UV图上对应像素的xyz位置
 + W(x,y) 是UV位置空间的权重,对UV空间进行权重控制,关键点:眼鼻嘴:脸部其他:其他 = 16:4:3:0
 
-TODO: 人脸纹理得到方式?
 
 # 训练细节
 
