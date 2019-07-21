@@ -9,7 +9,7 @@ looking for papers for [Efficent Net](https://arxiv.org/pdf/1905.11946.pdf)
 contributer : [leoluopy](https://github.com/leoluopy)
 
 + 欢迎提issue.欢迎watch ，star.
-+ 微信号：leoluopy，欢迎交流
++ 微信号：leoluopy，如有疑问，欢迎交流，得文时浅，或有纰漏，请不吝指教。
 
 <img width="200" height="200" src="https://github.com/leoluopy/paper_discussing/blob/master/wechat_id.jpeg"/>
 
