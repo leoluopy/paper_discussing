@@ -14,6 +14,11 @@ contributer : [leoluopy](https://github.com/leoluopy)
 
 # Overview
 
+![](./result.png)
+![](./metricError.png)
+
+
+![](./model_struct.png)
 
 # 方法叙述
 
