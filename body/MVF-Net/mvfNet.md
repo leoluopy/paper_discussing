@@ -23,14 +23,19 @@ contributer : [leoluopy](https://github.com/leoluopy)
 > 实现效果的另一侧面说明，由此也可以发现实现最终精度误差大约在1cm左右。
 
 
-# 方法叙述
+# 模型叙述
 + ![](./core_idea.png)
-+  
++  本文提出了一种使用多角度人脸相互投影并且对投影误差进行不断优化，这样得出了一种半监督学习的人脸三维建模方法。投影思路
+见上图
 + ![](./model_struct.png)
-+ 
-+ ![](./project_parameter.png)
-+
-+ ![](./3dmm_equation.png) 
+    + 本文使用的模型结构如上图所示，输入为三幅人脸图像 A/B/C 分别如图所示，两个侧脸和一个正脸
+    + 收到人脸使用相同权重提取特征，这里使用的VGG  【上图左边黄色部分】 ,可以是其他特征提取模型例如[EfficientNet](https://github.com/leoluopy/paper_discussing/blob/master/general/efficientNet/efficientNet.md)
+    + 提取到三个人脸的特征concat在一块儿，随后几层全连接层回归3DMM参数。
+        + ![](./3dmm_equation.png) 
+    + 提取到三个人脸的特征不concat一块作为另一个分支，使用共享全连接权重，回归人脸位姿
+        + ![](./project_parameter.png)
+
+
 
 # 训练方法
 + 
