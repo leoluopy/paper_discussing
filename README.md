@@ -8,7 +8,7 @@
 
 |领域|亮点|出处|笔记详情|
 |:----:|:----:|:----:|:----:|
-|人脸三维重建|2019人脸半监督高精度三维建模|CVPR2019|[EfficientNet](./body/MVF-Net/mvfNet.md)|
+|人脸三维重建|2019半监督人脸三维建模|CVPR2019|[MVF-Net](./body/MVF-Net/mvfNet.md)|
 |图像特征提取，模型裁剪缩放|2019state-of-art,搜索基础网络，缩放新方法|CVPR2019|[EfficientNet](./general/efficientNet/efficientNet.md)|
 |单图人脸重建|2018state-of-art,显著更快，端到端，精度大幅度提升|ECCV2018|[PRNet](./body/PRNet/PRNet.md)|
 |模型训练|无任何模型修改，精准率提升5个点VOC数据集|2019arxiv|[BoF](./general/BoF/bof.md)|
