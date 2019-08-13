@@ -32,8 +32,17 @@ contributer : [leoluopy](https://github.com/leoluopy)
     + 收到人脸使用相同权重提取特征，这里使用的VGG  【上图左边黄色部分】 ,可以是其他特征提取模型例如[EfficientNet](https://github.com/leoluopy/paper_discussing/blob/master/general/efficientNet/efficientNet.md)
     + 提取到三个人脸的特征concat在一块儿，随后几层全连接层回归3DMM参数。
         + ![](./3dmm_equation.png) 
-    + 提取到三个人脸的特征不concat一块作为另一个分支，使用共享全连接权重，回归人脸位姿
+        + s上横线　【markdown 没办法打】　：　表示BFM模型建立时那群高加索模特的3D模型的平均基础值 
+        + Eid :　表示人脸ID向量的basis
+        + Eexp :　表示人脸表情向量的basis
+        + Xid :　表示被回归得到的人脸ID向量[199维]
+        + Xexp :　表示被回归得到的人脸表情向量[29维]
+    + 提取到三个人脸的特征不concat一块作为另一个分支，使用共享全连接权重，回归人脸位姿 (Pose A, Pose B, Pose C)
         + ![](./project_parameter.png)
+        + f : 表示投影参数，投影方程见后文
+        + α,β,γ : 表示投影所需的欧拉角，转投影矩阵使用
+        + tx,ty : 表示投影平面上x,y的basis
+    + 上图中还有提到比如PhotoLoss,AlignLoss 是对训练Loss设计在整个架构的示意。下文介绍
 
 
 
