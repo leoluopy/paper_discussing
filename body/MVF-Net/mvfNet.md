@@ -62,6 +62,7 @@ contributer : [leoluopy](https://github.com/leoluopy)
     + t 是basis
     + 综合看维度= [2x3]*[3x3]*[3x1] + [2x1] = [2x1] 得到投影二维平面坐标
 + ![](./prjection_AB.png)
+    + ![](./X.png) 
 + ![](./prjectionAB2.png)
 
 ## 监督训练Loss
