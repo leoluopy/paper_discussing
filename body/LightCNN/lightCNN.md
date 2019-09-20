@@ -13,14 +13,29 @@ contributer : [leoluopy](https://github.com/leoluopy)
 
 
 # Overview
++ ![](./MFM_struct.png)
 +
 
+# 效果描述
++ ![](LFW_effe.png)
++ ![](IJB_effe.png)
 
-# 模型叙述
-+ 
+# 核心点叙述
++ ![](./MFM_equation.png)
++ ![](./MFM_gradient.png)
++ 训练方法概要。
++ ![](./speed.png)
+
+# 模型结构叙述
++ ![](./lightCNN4.png)
+
++ ![](./lightCNN9.png)
+
++ ![](./lightCNN29.png)
 
 
 # 训练方法
++ ![](./bootscrap_effe.png)
 
 
 
