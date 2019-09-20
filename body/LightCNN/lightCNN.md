@@ -14,14 +14,17 @@ contributer : [leoluopy](https://github.com/leoluopy)
 
 # Overview
 + ![](./MFM_struct.png)
-+
++ 
 
 # 效果描述
 + ![](LFW_effe.png)
 + ![](IJB_effe.png)
 
 # 核心点叙述
-+ ![](./MFM_equation.png)
++ ![](MFM_equation_12.png)
+
++ ![](./MFM_32equation.png)
+
 + ![](./MFM_gradient.png)
 + 训练方法概要。
 + ![](./speed.png)
