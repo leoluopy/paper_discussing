@@ -42,15 +42,18 @@ contributer : [leoluopy](https://github.com/leoluopy)
 
 # 模型结构叙述
 + ![](./lightCNN4.png)
-
 + ![](./lightCNN9.png)
-
 + ![](./lightCNN29.png)
-
++ 三个模型中MFM即是本文提出的操作符
++ conv2_x,conv3_x,conv5_x 这些是卷积层的堆叠
 
 # 训练方法
 + ![](./bootscrap_effe.png)
-
++ 第一步，先在相对准确数据集[CASIA-WebFace]训练，然后在有噪音数据集[MS-
+Celeb-1M]进行finetune,为降低收敛难度，只训练分类器，快收敛时，全部训练并递减学习率从1e-3 到 1e-5。
++ 第二步，在噪音数据集预测，预测与label保持label,若不一致，高于阈值的的预测修改label为预测结果，修改后得到　MS-1M-1R
++ 第三步，使用数据集　MS-1M-1R　进行 retrain ,在重复relabel得到数据集MS-1M-2R
++ 第四步，使用数据集　MS-1M-2R　再次训练　，　MS-Celeb-1M数据集人脸ID变少，模型效果变强。
 
 
 
