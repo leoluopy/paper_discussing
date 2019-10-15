@@ -8,6 +8,7 @@
 
 |领域|亮点|出处|笔记详情|
 |:----:|:----:|:----:|:----:|
+|人脸姿态|不需要特征点的人脸姿态估计新方法|CVPR2018|[HopeNet](./body/Hopenet/hopeNet.md)|
 |人脸识别|嵌入式轻量级人脸识别|CVPR2016|[Light-CNN](./body/LightCNN/lightCNN.md)|
 |人脸三维重建|2019半监督人脸三维建模|CVPR2019|[MVF-Net](./body/MVF-Net/mvfNet.md)|
 |图像特征提取，模型裁剪缩放|2019state-of-art,搜索基础网络，缩放新方法|CVPR2019|[EfficientNet](./general/efficientNet/efficientNet.md)|
