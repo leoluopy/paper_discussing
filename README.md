@@ -8,6 +8,7 @@
 
 |领域|亮点|出处|笔记详情|
 |:----:|:----:|:----:|:----:|
+|人脸检测|anchor创新，对小人脸和远离anchor人脸尤其有效,recall很高|ICCV2017|[S3FD](./body/S3fd/S3fd.md)|
 |人脸姿态|不需要特征点的人脸姿态估计新方法|CVPR2018|[HopeNet](./body/Hopenet/hopeNet.md)|
 |人脸识别|嵌入式轻量级人脸识别|CVPR2016|[Light-CNN](./body/LightCNN/lightCNN.md)|
 |人脸三维重建|2019半监督人脸三维建模|CVPR2019|[MVF-Net](./body/MVF-Net/mvfNet.md)|
