@@ -16,16 +16,41 @@ contributer : [leoluopy](https://github.com/leoluopy)
 + 
 
 # 效果描述
-+ 
++ ![](./retAFW.png)
+
++ ![](./retPASCAL.png)
+
++ ![](./retFDDB.png)
+
++ ![](./retWIDERFACE.png)
+
 
 # 核心点叙述
-+ 
++ ![](./problemOfanchor.png)
+
++ ![](./scale_equitable_anchor.png)
+
++ ![](./receptiveF_achor.png)
+> RF stride anchor 之间的关系。
+> receptive field 大小对应代码。
+
++ ![](./anchorNum.png)
+
++ ![](./maxOutAndmatchStrategy.png) 
+> max-out background 代码实现
+
++ ![](./ablationStudy.png)
 
 # 模型结构叙述
-+ 
++ ![](./netWork.png)
 
 # 训练方法
-+ 
++ ![](LossFun.png)
+
+# 附加知识点笔记
++ ROC曲线
++ [ L1 L2 L3 loss ]
+
 
 
 
