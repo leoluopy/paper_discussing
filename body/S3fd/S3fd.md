@@ -41,26 +41,44 @@ contributer : [leoluopy](https://github.com/leoluopy)
     + 在设计小anchor时，在一定大小的特征图中，会出现异常多的负样本，因为他们感受野下的目标都不是人脸
 + ![](./receptiveF_achor.png)
 + ![](./scale_equitable_anchor.png)
-+ 解决anchor本文提出了第一步：均匀的分布人脸anchor
++ 解决anchor问题，本文提出了第一步：均匀的分布人脸anchor
     + 如上图所示在各个不同的特征图上，不同的Anchor尺寸，按照 N/4滑动，均分分布在特征图上
     + N 是anchor的尺寸
     + RF是感受野，这里指当前做回归的特征图的一部分
 + ![](./anchorNum.png)
 + 上表对应了在不同的的预测特征图上对应的anchor数量，Scale为16时【也即是anchor为16】时，anchor最多。
 
-+ ![](./maxOutAndmatchStrategy.png) 
-> max-out background 代码实现
++ 解决anchor问题，本文提出了第二步：anchor匹配补偿
+    + 原有anchor匹配阈值从0.5降低至0.35,并对anchor匹配成功的目标GT求得平均值。
+    + 取到anchor匹配过程中0.1到0.35之间的anchor,并排序，取TopN的anchor作为匹配结果,N就是刚才算到的平均值
+    + 这样一来有更多的anchor有相应的学习机会，同时匹配度低的anchor中有参考意义的anchor也能学习到特征
+
++ ![](./maxOutAndmatchStrategy.png)
++ 解决anchor问题，本文提出了第三步：label max-Out处理
+    + 实际上这种处理就是加大在分类器训练过程中人脸label的权重 [如上图所示]
+> max-out background 参考代码
+```
+max_conf, _ = torch.max(conf_x[:, 0:3, :, :], dim=1, keepdim=True)
+第一维是batchSize ，第二维是maxOut的label,第三维第四维是特征图尺寸.
+```
 
 + ![](./ablationStudy.png)
-
++ 消融学习结论如上
+    + 均匀anchor分布贡献最大,maxOut和匹配补偿都有相应的贡献
+    + F: anchor均匀分布
+    + S: anchor匹配补偿
+    + M: 分类器maxOut策略
 # 模型结构叙述
 + ![](./netWork.png)
++ 基础网络左上角所示，是VGG16是主要的特征提取器，extraLayers也能做一定的特征提取
++ 在中间是预测layer主要目的是使用这些在不同scale上提取到的特征进行目标回归和分类。
++ 第一个预测层中加了上文所说的maxOut方法
 
-# 训练方法
+# 训练Loss设计
 + ![](LossFun.png)
++ cls是分类器Loss，被正样本和负样本同时归一化
++ reg是位置Loss,被正样本归一化
 
-# 附加知识点笔记
-+ [ L1 L2 L3 loss ]
 
 
 
