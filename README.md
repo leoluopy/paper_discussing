@@ -8,6 +8,7 @@
 
 |领域|亮点|出处|笔记详情|
 |:----:|:----:|:----:|:----:|
+|人脸检测|anchor free，效果好，速率快，基于感受野新backbone|CVPR2019|[LFFD](./body/LFFD/LFFD.md)|
 |人脸检测|anchor创新，对小人脸和远离anchor人脸尤其有效,recall很高|ICCV2017|[S3FD](./body/S3fd/S3fd.md)|
 |人脸姿态|不需要特征点的人脸姿态估计新方法|CVPR2018|[HopeNet](./body/Hopenet/hopeNet.md)|
 |人脸识别|嵌入式轻量级人脸识别|CVPR2016|[Light-CNN](./body/LightCNN/lightCNN.md)|
