@@ -47,7 +47,9 @@ contributer : [leoluopy](https://github.com/leoluopy)
 
 # 模型结构叙述
 + ![](./structure.png)
-+ 
++ 对于模型的设计十分简洁，没有特殊的卷积或者池化操作
++ 图中各个箭头代表不同的pading和stride.加号是对层结果进行累加（是常见的残差处理）
++ Loss branch也分为两部分，一部分是人脸分类loss,一部分是box坐标loss
 
 # 训练及Loss设计
 + ![](./loss.png)
@@ -55,7 +57,8 @@ contributer : [leoluopy](https://github.com/leoluopy)
 
 # TIPS
 + ![](./FLOPS.png)
-+
++ 上图是各个模型的，模型参数，模型FLOPS，和模型大小，FLOPS 的定义代表了神经网络模型计算的复杂度，但并不一定是线性关系。
+因此本文提出了Enet这个标准表征了模型的运算效率，Enet越大，模型运算效率越高(单位时间能运算的FLOPS数量)
 + ![](./EnetFlops.png)
 
 
