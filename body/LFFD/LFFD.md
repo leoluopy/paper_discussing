@@ -41,9 +41,16 @@ contributer : [leoluopy](https://github.com/leoluopy)
     + 对于中等大小人脸，感受野除了需要包含人脸同时，需要少部分场景信息。
     + 对于很大人脸，由于脸部信息丰富，只需要脸部信息。
 + ![](./RF_distribute.png)
-+ 
++ Location对应下图中网络位置
++ RF size: 感受野大小
++ RF stride: 如果把感受野类比为在原图中的预选框滑动，这个stride就是每次滑动的像素
++ Continuous face scale: 被感受野捕获的人脸大小。
+> 例如c8的　RF size: 55 , featureMapSize: 159 ,也就是有 159x159个感受野用于预测人脸。每个人脸在实际图片上滑动距离是4像素
 
- 
++ ![](./RF_compute.png)
++ 感受野计算方法规律
+    + 初始感受野大小 1x1
+    + 感受野大小经过卷积后增大，增大速率与累积stride成正比
 
 # 模型结构叙述
 + ![](./structure.png)
@@ -53,7 +60,20 @@ contributer : [leoluopy](https://github.com/leoluopy)
 
 # 训练及Loss设计
 + ![](./loss.png)
-
++ 上图是模型回归结果的 GT定义。
+> 和基于 anchor 方法回归偏移量和指数参数，不同的是本文方法直接回归了人脸框和感受野的相对关系。
++ RFx 是感受野中心的x坐标,RFy 是感受野中心的y坐标（每个感受野都有他对应的在原图中的位置，是图像中自然存在的anchor）
++ RFs 是感受野大小
++ 其他训练细节
+    + 人脸大小在预选大小【0.9-1],[1-1.1]之间人脸被忽略
+    + 同时两个人脸落到感受野中心的，这个感受野被忽略不计loss
+    + softmax-crossEntropy为分类loss,被标记为人脸时激活，其他时候抑制。
+    + 激活时，BoxLoss有L2正则化
+    + 负样本的感受野总比正样本多很多，将负样本感受野Loss排序，只反向传播最大的。
+    + 预处理（x-127.0）/127.5
+    + 优化器SGD 0.9 ,不进行weight decay , batch-size: 32 .模型很小所以不用　weight-decay
+    + 初始学习率0.1, 总共150万. 迭代衰减学习率x0.1。衰减位置是： 60万，100万, 120万 , 140万
+    + 两张1080Ti训练5天。 
 
 # TIPS
 + ![](./FLOPS.png)
