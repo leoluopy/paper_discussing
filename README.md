@@ -8,6 +8,7 @@
 
 |领域|亮点|出处|笔记详情|
 |:----:|:----:|:----:|:----:|
+|OCR文字检测|任意形状，不粘连不漏检，效果良好| CVPR2019|[pseNet](./Textual/PSENet/PSENet.md)|
 |人脸检测|anchor free，效果好，速率快，基于感受野新backbone|CVPR2019|[LFFD](./body/LFFD/LFFD.md)|
 |人脸检测|anchor创新，对小人脸和远离anchor人脸尤其有效,recall很高|ICCV2017|[S3FD](./body/S3fd/S3fd.md)|
 |人脸姿态|不需要特征点的人脸姿态估计新方法|CVPR2018|[HopeNet](./body/Hopenet/hopeNet.md)|
@@ -19,7 +20,7 @@
 |图像修复|模糊，超分辨率多领域，更快速率，更高精度|ECCV2018|[deblurGAN](./GAN/deblurGAN/deblurGAN.md)|
 |CV车牌识别|非限制场景，大倾角，超过商业|ECCV2018|[alpr](./ALPR/alpr.md)|
 |CV自动驾驶|简洁端到端处理| CVPR2017|[dave](./DAVE/dave.md)|
-|OCR文字识别|端到端，不用对齐，无字典| PAMI2015|[crnn](./CRNN/crnn.md)|
+|OCR文字识别|端到端，不用对齐，无字典| PAMI2015|[crnn](./Textual/CRNN/crnn.md)|
 |CV目标检测|anchor cluster scale|CVPR2017|[yolo2/YOLO9000](https://github.com/leoluopy/paper_discussing/blob/master/yolo/yolo2/yolo2_discussing.md)|
 |CV目标检测|single net|CVPR2016|[yolo1](https://github.com/leoluopy/paper_discussing/blob/master/yolo/yolo1/yolo1_discussing.md)|
 |CV目标检测|multi scale darknet53|report|[yolo3](https://github.com/leoluopy/paper_discussing/blob/master/yolo/yolo3/yolo3_discussing.md)|
