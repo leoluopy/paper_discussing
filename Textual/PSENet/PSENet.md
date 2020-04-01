@@ -13,21 +13,42 @@ contributer : [leoluopy](https://github.com/leoluopy)
 
 
 # Overview
+![](./overview_effe.png)
 + 膨胀
 
 # 效果描述
+![](./ret_of_curve.png)
 + 
 
+![](./compareToother.png)
+
 # 核心点叙述
+![](./pipeline.png)
 + 
 > xx
 
 
 # 模型结构叙述
+![](./netWork.png)
++ 
+
+## 消融研究
+![](./ablation.png)
 + 
 
 # 训练及Loss设计
+## label生产
+![](./shrink_formula.png)
+![](./shrinkLabel.png)
+
+## Loss
+![](./loss_all.png)
 +  
+
+![](./loss_seg1.png)
+![](./loss_seg2.png)
+![](./loss_shrink.png)
+
 
 # TIPS
 + 
