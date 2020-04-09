@@ -7,7 +7,7 @@ looking for papers for [PSE](https://arxiv.org/abs/1806.02559)
 contributer : [leoluopy](https://github.com/leoluopy)
 
 + 欢迎提issue.欢迎watch ，star.
-+ 微信号：leoluopy，如有疑问，欢迎交流，得文时浅，或有纰漏，请不吝指教。
++ 微信号：leoluopy，如有疑问，欢迎交流，拍砖
 
 <img width="200" height="200" src="https://github.com/leoluopy/paper_discussing/blob/master/wechat_id.jpeg"/>
 
