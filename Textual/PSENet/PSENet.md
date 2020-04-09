@@ -5,7 +5,7 @@
 looking for papers for [PSE](https://arxiv.org/abs/1806.02559)
 
 contributer : [leoluopy](https://github.com/leoluopy)
-
+同步更新位置及其他顶会视觉算法分析：https://github.com/leoluopy/paper_discussing
 + 欢迎提issue.欢迎watch ，star.
 + 微信号：leoluopy，如有疑问，欢迎交流，拍砖
 
