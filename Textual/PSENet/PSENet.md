@@ -42,25 +42,35 @@ contributer : [leoluopy](https://github.com/leoluopy)
 
 ## 消融研究
 ![](./ablation.png)
-+ m : 缩放比例(最小/原始)
-+ n : 预测特征图个数
++ m : 缩放比例(最小/原始)　[由图可见，过大或者过小的m都对性能提升不利，取0.5左右的m,能对性能起到贡献]
++ n : 预测特征图个数 [可以看到从预测特征图的逐步增加，F1-Score逐步提升，n=4时到达拐点，n对于性能的提升起到了重要作用]
 
 # 训练及Loss设计
 ## label生产
 ![](./shrink_formula.png)
 ![](./shrinkLabel.png)
++ 上图介绍了标签生成的规则
+    + d 是两个GT之间的缩进距离
+    + r 缩放的比例，和m,n有关系，预测特征图越小，r越小
+    + Area是求面积函数
+    + Perimeter是求周长函数
 
 ## Loss
 ![](./loss_all.png)
-+  
++ Loss由两部分构成，普通分割Lc和缩放膨胀部分Ls
++ λ控制两部分Loss权重
 
 ![](./loss_seg1.png)
 ![](./loss_seg2.png)
++ Si 是预测像素值
++ Gi 是标注像素值
++ M (Online Hard Example Mining) 训练过程中将部分简单样本和小数量样本进行抑制，提高训练效率,[点我更多信息](http://www.erogol.com/online-hard-example-mining-pytorch/)
 ![](./loss_shrink.png)
++ Si 是对应尺度预测图的预测像素值
++ Gi 是对应尺度生成的标注像素值
++ Si > 0.5 时，W 取 1 , 其他情况　W 取 0
+> 通过这种方式，W过滤掉对应尺度特征图上被腐蚀掉的目标部分。加速训练过程，个人认为如果没有W,应该也能训练出相当的效果，欢迎拍砖
 
-
-# TIPS
-+ 
 
 
 
