@@ -1,6 +1,6 @@
 
 
-# LFFD 核心点笔记
+# PSENet 核心点笔记
 
 looking for papers for [PSE](https://arxiv.org/abs/1806.02559)
 
