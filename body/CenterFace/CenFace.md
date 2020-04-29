@@ -32,18 +32,18 @@ contributer : [leoluopy](https://github.com/leoluopy)
 
 # 训练及Loss设计
 ## Loss
-![](Lall.png)
+![](./Lall.png)
 +
 
-![](Lc.png)
+![](./Lc.png)
 +
-![](Ok.png)
+![](./Ok.png)
 +
-![](Loff.png)
+![](./Loff.png)
 +
-![](Lbox.png)
+![](./Lbox.png)
 +
-![](Lkeypoint.png)
+![](./Lkeypoint.png)
 +
 
 ## 训练细节
