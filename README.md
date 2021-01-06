@@ -6,8 +6,10 @@
 
 <img width="200" height="200" src="https://github.com/leoluopy/paper_discussing/blob/master/wechat_id.jpeg"/>
 
-|领域|亮点|出处|笔记详情|
+|领域|亮点|出处|详情|
 |:----:|:----:|:----:|:----:|
+|人脸识别|近几年人脸识别文章大部分专注在loss改进，这篇文章网络结果改进|CVPR2020|[GroupFace](./body/GroupFace/groupFace.md)|
+|人脸识别|pair 训练和分类 统一并超过arcFace|CVPR2020|[CirCleLoss](./body/CirCleLoss/circleLoss.md)|
 |人脸检测|anchor free，效果好，速率快，基于感受野,同时人脸对齐|2020arxiv|[CenterFace](./body/CenterFace/CenFace.md)|
 |OCR文字检测|任意形状，不粘连不漏检，效果良好| CVPR2019|[pseNet](./Textual/PSENet/PSENet.md)|
 |人脸检测|anchor free，效果好，速率快，基于感受野新backbone|CVPR2019|[LFFD](./body/LFFD/LFFD.md)|
