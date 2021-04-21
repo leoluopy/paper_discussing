@@ -1,7 +1,5 @@
 
 + 欢迎提issue.欢迎watch ，star.
-+ 微信号：leoluopy，如有疑问，欢迎交流，拍砖
-<img width="200" height="200" src="https://github.com/leoluopy/paper_discussing/blob/master/wechat_id.jpeg"/>
 
 
 + ![](./circleLossTitle.png)
