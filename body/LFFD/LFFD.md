@@ -7,9 +7,6 @@ looking for papers for [LFFD](https://arxiv.org/abs/1904.10633)
 contributer : [leoluopy](https://github.com/leoluopy)
 
 + 欢迎提issue.欢迎watch ，star.
-+ 微信号：leoluopy，如有疑问，欢迎交流，拍砖
-
-<img width="200" height="200" src="https://github.com/leoluopy/paper_discussing/blob/master/wechat_id.jpeg"/>
 
 
 # Overview
