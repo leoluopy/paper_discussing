@@ -2,9 +2,6 @@
 
 
 + 欢迎提issue.欢迎watch ，star.
-+ 微信号：leoluopy，欢迎交流
-
-<img width="200" height="200" src="https://github.com/leoluopy/paper_discussing/blob/master/wechat_id.jpeg"/>
 
 |领域|亮点|出处|详情|
 |:----:|:----:|:----:|:----:|
